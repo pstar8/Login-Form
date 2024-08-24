@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  /* display: flex; */
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', sans-serif;
+  background-color: #222;
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  /* literally toook the whole box to the middle  */
+  transform: translate(-50%, -50%);
+  /* Gave the box a background */
+  background: rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  /* Gives it a 3D effect */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+}
+
+.login-box h1 {
+  margin: 0 0 30px;
+  color: #fefefe;
+  padding: 0;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  /* Turns out there was no need for this after all coz its transparent */
+  color: #fefefe;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fefefe;
+  outline: none;
+  background: transparent;
+}
+
+/* .login-box .user-box label {
+  Kind of puts the labels in their place, I dunno how
+  position: absolute;
+  color: #fefefe;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+} */
+
+.login-box .user-box input::placeholder {
+  transition: 1s ease-in;
+  pointer-events: none;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  color: #00ffdd;
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  overflow: hidden;
+  transition: 0.75s;
+  margin-top: 40px;
+  content: '';
+  z-index: 1;
+}
+
+.login-box form a:hover,
+a:active {
+  background: #05ffde;
+  color: #fefefe;
+  border-radius: 5px;
+  /* filter: drop-shadow(0 0 5px #05ffde); */
+  box-shadow: 0 0 5px #05ffde, 0 0 15px #05ffde, 0 0 20px #05ffde,
+    0 0 35px #05ffde;
+  transition-delay: 1.5s;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #05ffde);
+}
+
+.login-box a:hover span:nth-child(1) {
+  transition: 1s;
+  left: 100%;
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, #05ffde);
+}
+
+.login-box a:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1.25s;
+  transition-delay: 0.25s;
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #05ffde);
+}
+
+.login-box a:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1.5s;
+  transition-delay: 0.75s;
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(360deg, transparent, #05ffde);
+}
+
+.login-box a:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1.5s;
+  transition-delay: 1.3s;
+}
+
+.login-box p {
+  color: #fefefe;
+  text-align: center;
+  margin-block: 40px 10px;
+}
+
+.login-box .forgot-password {
+  font-size: smaller;
+  color: #05ffde;
+}
+
+.login-box p a {
+  text-decoration: none;
+  color: #05ffde;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 30dvw;
+  margin: 20px 0;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+footer a {
+  /* top: 50px;
+  left: 50px; */
+  text-decoration: none;
+}
+
+footer span {
+  color: #919191;
+}
+
+@media screen and (max-width: 650px) {
+  body {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  footer {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 650px) and (max-width: 999px) {
+  body {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Wanted to use an animation but wasn't able to */
+/* @keyframes anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+} */
